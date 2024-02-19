@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'request.dart';
+import 'provide.dart';
 
 void main() => runApp(const LiftApp());
 
@@ -77,13 +79,14 @@ class _LifeHomeState extends State<LifeHome> {
                     child: InkWell(
                       splashColor: Colors.blue,
                       onTap: () {
-                        debugPrint('Card tapped.');
+                        debugPrint('Personal tapped.');
                       },
                       child: Expanded(
                         child: SizedBox(
                           width: MediaQuery.of(context).size.width,
                           child: const Text(
                             '個人檔案',
+                            style: TextStyle(fontSize: 30),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -91,6 +94,7 @@ class _LifeHomeState extends State<LifeHome> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 50),
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -106,14 +110,19 @@ class _LifeHomeState extends State<LifeHome> {
                           child: InkWell(
                             splashColor: Colors.blue,
                             onTap: () {
-                              debugPrint('Card tapped.');
+                              debugPrint('Provide tapped.');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const Provide(),
+                                  ));
                             },
                             child: Container(
                               color: Colors.black54,
-                              height: MediaQuery.of(context).size.height / 2.5,
+                              height: MediaQuery.of(context).size.height / 2.7,
                               child: const Text(
                                 '供給',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white,fontSize: 30),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -131,13 +140,18 @@ class _LifeHomeState extends State<LifeHome> {
                             splashColor: Colors.blue,
                             onTap: () {
                               debugPrint('需求');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const Request(),
+                                  ));
                             },
                             child: Container(
                               color: Colors.black54,
                               height: MediaQuery.of(context).size.height / 2.5,
                               child: const Text(
                                 '需求',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white,fontSize: 30),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -147,6 +161,7 @@ class _LifeHomeState extends State<LifeHome> {
                     ],
                   ),
                 ),
+                const SizedBox(height: 50),
               ],
             ),
           ),
