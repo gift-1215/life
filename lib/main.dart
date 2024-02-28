@@ -4,70 +4,87 @@ import 'package:get/get.dart';
 import 'message_page.dart';
 import 'home_page.dart';
 import 'notification_page.dart';
+import 'getx_controller.dart';
 
-void main() => runApp(const LifeApp());
+class LandingPage extends StatelessWidget {
+  final TextStyle unselectedLabelStyle = TextStyle(
+      color: Colors.white.withOpacity(0.5),
+      fontWeight: FontWeight.w500,
+      fontSize: 12);
 
-class LifeApp extends StatelessWidget {
-  const LifeApp({super.key});
+  final TextStyle selectedLabelStyle =
+      const TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
 
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      home: const LifeHome(),
-    );
+  buildBottomNavigationMenu(context, landingPageController) {
+    return Obx(() => MediaQuery(
+        data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+        child: SizedBox(
+          height: 54,
+          child: BottomNavigationBar(
+            showUnselectedLabels: true,
+            showSelectedLabels: true,
+            onTap: landingPageController.changeTabIndex,
+            currentIndex: landingPageController.tabIndex.value,
+            backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
+            unselectedItemColor: Colors.white.withOpacity(0.5),
+            selectedItemColor: Colors.white,
+            unselectedLabelStyle: unselectedLabelStyle,
+            selectedLabelStyle: selectedLabelStyle,
+            items: [
+              BottomNavigationBarItem(
+                icon: Container(
+                  margin: const EdgeInsets.only(bottom: 7),
+                  child: const Icon(
+                    Icons.home,
+                    size: 20.0,
+                  ),
+                ),
+                label: 'Home',
+                backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                  margin: const EdgeInsets.only(bottom: 7),
+                  child: const Icon(
+                    Icons.message,
+                    size: 20.0,
+                  ),
+                ),
+                label: 'Message',
+                backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                  margin: const EdgeInsets.only(bottom: 7),
+                  child: const Icon(
+                    Icons.notifications_on,
+                    size: 20.0,
+                  ),
+                ),
+                label: 'Notification',
+                backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
+              ),
+            ],
+          ),
+        )));
   }
-}
-
-class LifeHome extends StatefulWidget {
-  const LifeHome({super.key});
-
-  @override
-  State<LifeHome> createState() => _LifeHomeState();
-}
-
-class _LifeHomeState extends State<LifeHome> {
-  int currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        indicatorColor: Colors.amber,
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            icon: Badge(child: Icon(Icons.notifications_sharp)),
-            label: 'Notifications',
-          ),
-          NavigationDestination(
-            icon: Badge(
-              label: Text('2'),
-              child: Icon(Icons.messenger_sharp),
-            ),
-            label: 'Messages',
-          ),
-        ],
-      ),
-      appBar: AppBar(
-        title: const Text('Life App'),
-        backgroundColor: Colors.black12,
-      ),
-      body: <Widget>[
-        const HomePage(),
-        const NotificationPage(),
-        const MessagePage(),
-      ][currentPageIndex],
-    );
+    final LandingPageController landingPageController =
+        Get.put(LandingPageController(), permanent: false);
+    return SafeArea(
+        child: Scaffold(
+      bottomNavigationBar:
+          buildBottomNavigationMenu(context, landingPageController),
+      body: Obx(() => IndexedStack(
+            index: landingPageController.tabIndex.value,
+            children: [
+              const HomePage(),
+              const MessagePage(),
+              const NotificationPage(),
+            ],
+          )),
+    ));
   }
 }
