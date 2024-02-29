@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                             },
                             child: Container(
                               color: Colors.black54,
-                              height: MediaQuery.of(context).size.height / 2.7,
+                              height: 200,
                               child: const Text(
                                 '供給',
                                 style: TextStyle(
@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                             },
                             child: Container(
                               color: Colors.black54,
-                              height: MediaQuery.of(context).size.height / 2.5,
+                              height: 200,
                               child: const Text(
                                 '需求',
                                 style: TextStyle(

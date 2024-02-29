@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "241298580805",
+    "project_id": "airyzone-life-app",
+    "storage_bucket": "airyzone-life-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241298580805:android:850e9bf2d11c8e3d2f4a2c",
+        "android_client_info": {
+          "package_name": "com.airyzone.env_sys"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIpYE5jphnAEeMcy4PEPs4b-gBvvfo-TY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.airyzone.life"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241298580805:android:b72be9a4ed1c70802f4a2c",
+        "android_client_info": {
+          "package_name": "com.example.life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIpYE5jphnAEeMcy4PEPs4b-gBvvfo-TY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.airyzone.life"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
