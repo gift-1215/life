@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCIpYE5jphnAEeMcy4PEPs4b-gBvvfo-TY',
-    appId: '1:241298580805:android:b72be9a4ed1c70802f4a2c',
+    appId: '1:241298580805:android:f0774208c5d64d842f4a2c',
     messagingSenderId: '241298580805',
     projectId: 'airyzone-life-app',
     storageBucket: 'airyzone-life-app.appspot.com',
@@ -67,17 +67,19 @@ class DefaultFirebaseOptions {
     messagingSenderId: '241298580805',
     projectId: 'airyzone-life-app',
     storageBucket: 'airyzone-life-app.appspot.com',
+    androidClientId: '241298580805-856plqem8ubgoskqas1goe82l97nfkuo.apps.googleusercontent.com',
     iosClientId: '241298580805-rov62ccuftaqf8iv1b81a6jh1bi7etr6.apps.googleusercontent.com',
     iosBundleId: 'com.testing.life',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCwwZu6-MlbIgxQQPpp9dAQg1zUmCxwgwI',
-    appId: '1:241298580805:ios:f7a46843a2ae0ee62f4a2c',
+    appId: '1:241298580805:ios:c974cfde9cdca2ee2f4a2c',
     messagingSenderId: '241298580805',
     projectId: 'airyzone-life-app',
     storageBucket: 'airyzone-life-app.appspot.com',
-    iosClientId: '241298580805-oap4deit2mh67ihr4v9al9t03efmt9c5.apps.googleusercontent.com',
+    androidClientId: '241298580805-856plqem8ubgoskqas1goe82l97nfkuo.apps.googleusercontent.com',
+    iosClientId: '241298580805-3dkrrimm7gl3ibl4g9ki2i3v8q72scm1.apps.googleusercontent.com',
     iosBundleId: 'com.testing.life.RunnerTests',
   );
 }

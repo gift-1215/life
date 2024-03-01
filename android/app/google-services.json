@@ -45,7 +45,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:241298580805:android:b72be9a4ed1c70802f4a2c",
         "android_client_info": {
-          "package_name": "com.testing.life"
+          "package_name": "com.example.life"
         }
       },
       "oauth_client": [
@@ -80,6 +80,50 @@
     {
       "client_info": {
         "mobilesdk_app_id": "1:241298580805:android:b76ee1a9da5ae6c02f4a2c",
+        "android_client_info": {
+          "package_name": "com.test.life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241298580805-856plqem8ubgoskqas1goe82l97nfkuo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.test.life",
+            "certificate_hash": "8cad02d726a00c191ea39113663a357c0fb50ee3"
+          }
+        },
+        {
+          "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIpYE5jphnAEeMcy4PEPs4b-gBvvfo-TY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.airyzone.life"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241298580805:android:f0774208c5d64d842f4a2c",
         "android_client_info": {
           "package_name": "com.testing.life"
         }

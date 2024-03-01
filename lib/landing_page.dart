@@ -1,8 +1,5 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import 'message_page.dart';
 import 'home_page.dart';
@@ -13,15 +10,13 @@ import 'sign_page.dart';
 bool sign_in = false;
 
 class LandingPage extends StatelessWidget {
- 
-
   final TextStyle unselectedLabelStyle = TextStyle(
       color: Colors.white.withOpacity(0.5),
       fontWeight: FontWeight.w500,
       fontSize: 12);
 
-  final TextStyle selectedLabelStyle =
-      const TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
+  final TextStyle selectedLabelStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
 
   buildBottomNavigationMenu(context, landingPageController) {
     return Obx(() => MediaQuery(
@@ -78,17 +73,21 @@ class LandingPage extends StatelessWidget {
   }
 
   @override
-  
-
   Widget build(BuildContext context) {
     final LandingPageController landingPageController =
         Get.put(LandingPageController(), permanent: false);
-    if(!sign_in)return SignInPage();
     return SafeArea(
         child: Scaffold(
       bottomNavigationBar:
           buildBottomNavigationMenu(context, landingPageController),
-      body: Obx(() => IndexedStack(
+appBar: AppBar(
+        title: const Text(
+          'airyzone Life',
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Color.fromARGB(255, 32, 13, 58),
+      ),      body: Obx(() => IndexedStack(
             index: landingPageController.tabIndex.value,
             children: [
               const HomePage(),
