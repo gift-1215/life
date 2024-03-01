@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'message_page.dart';
 import 'home_page.dart';
@@ -7,6 +8,9 @@ import 'notification_page.dart';
 import 'getx_controller.dart';
 
 class LandingPage extends StatelessWidget {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  User? _user;
+
   final TextStyle unselectedLabelStyle = TextStyle(
       color: Colors.white.withOpacity(0.5),
       fontWeight: FontWeight.w500,
@@ -19,7 +23,7 @@ class LandingPage extends StatelessWidget {
     return Obx(() => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
         child: SizedBox(
-          height: 90,
+          height: 100,
           child: BottomNavigationBar(
             showUnselectedLabels: true,
             showSelectedLabels: true,
@@ -36,7 +40,7 @@ class LandingPage extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 8),
                   child: const Icon(
                     Icons.home,
-                    size: 15.0,
+                    size: 25.0,
                   ),
                 ),
                 label: 'Home',
@@ -47,7 +51,7 @@ class LandingPage extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 8),
                   child: const Icon(
                     Icons.message,
-                    size: 15.0,
+                    size: 25.0,
                   ),
                 ),
                 label: 'Message',
@@ -58,7 +62,7 @@ class LandingPage extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 8),
                   child: const Icon(
                     Icons.notifications_on,
-                    size: 15.0,
+                    size: 25.0,
                   ),
                 ),
                 label: 'Notification',
@@ -70,6 +74,8 @@ class LandingPage extends StatelessWidget {
   }
 
   @override
+  
+
   Widget build(BuildContext context) {
     final LandingPageController landingPageController =
         Get.put(LandingPageController(), permanent: false);
