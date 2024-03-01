@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Provide extends StatefulWidget {
+class Provide extends StatelessWidget {
   const Provide({super.key});
 
-  @override
-  State<Provide> createState() => _ProvideState();
-}
 
-class _ProvideState extends State<Provide> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,10 +8,12 @@ import 'message_page.dart';
 import 'home_page.dart';
 import 'notification_page.dart';
 import 'getx_controller.dart';
+import 'sign_page.dart';
+
+bool sign_in = false;
 
 class LandingPage extends StatelessWidget {
-  final FirebaseAuth auth = FirebaseAuth.instance;
-  User? _user;
+ 
 
   final TextStyle unselectedLabelStyle = TextStyle(
       color: Colors.white.withOpacity(0.5),
@@ -79,6 +83,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final LandingPageController landingPageController =
         Get.put(LandingPageController(), permanent: false);
+    if(!sign_in)return SignInPage();
     return SafeArea(
         child: Scaffold(
       bottomNavigationBar:

@@ -78,6 +78,6 @@ class DefaultFirebaseOptions {
     projectId: 'airyzone-life-app',
     storageBucket: 'airyzone-life-app.appspot.com',
     iosClientId: '241298580805-oap4deit2mh67ihr4v9al9t03efmt9c5.apps.googleusercontent.com',
-    iosBundleId: 'com.example.life.RunnerTests',
+    iosBundleId: 'com.testing.life.RunnerTests',
   );
 }

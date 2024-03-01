@@ -45,7 +45,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:241298580805:android:b72be9a4ed1c70802f4a2c",
         "android_client_info": {
-          "package_name": "com.example.life"
+          "package_name": "com.testing.life"
         }
       },
       "oauth_client": [
@@ -81,7 +81,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:241298580805:android:b76ee1a9da5ae6c02f4a2c",
         "android_client_info": {
-          "package_name": "com.test.life"
+          "package_name": "com.testing.life"
         }
       },
       "oauth_client": [
