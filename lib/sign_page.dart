@@ -19,11 +19,14 @@ class _SignInPageState extends State<SignInPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   User? _user;
 
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() {
-    Get.off(LandingPage());
+  void signUserIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text, 
+      password: passwordController.text,
+      );
   }
 
   @override
@@ -62,7 +65,7 @@ class _SignInPageState extends State<SignInPage> {
                 height: MediaQuery.of(context).size.width * 0.05,
               ),
               MyTextField(
-                  controller: usernameController,
+                  controller: emailController,
                   hintText: "Email",
                   obscureText: false),
               SizedBox(
