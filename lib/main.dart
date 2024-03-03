@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:life/firebase_options.dart';
 
-import 'welcome_page.dart';
+import 'SignIn/welcome_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

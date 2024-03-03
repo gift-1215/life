@@ -2,10 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'message_page.dart';
-import 'home_page.dart';
-import 'notification_page.dart';
-import 'components/getx_controller.dart';
+import '../message_page.dart';
+import '../home_page.dart';
+import '../notification_page.dart';
+import '../components/getx_controller.dart';
 
 class LandingPage extends StatelessWidget {
   final TextStyle unselectedLabelStyle = TextStyle(
@@ -88,7 +88,6 @@ class LandingPage extends StatelessWidget {
           'airyzone Life',
           style: TextStyle(color: Colors.white),
         ),
-        //iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(onPressed: signUserOut, icon: Icon(Icons.logout,color: Colors.white,)),
         ],
