@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'request.dart';
 import 'provide.dart';
+import 'personal_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -31,6 +32,7 @@ class HomePage extends StatelessWidget {
                   splashColor: Colors.blue,
                   onTap: () {
                     debugPrint('Personal tapped.');
+                    Get.to(PersonalPage());
                   },
                   child: Expanded(
                     child: SizedBox(
@@ -130,7 +132,7 @@ class HomePage extends StatelessWidget {
                   splashColor: Colors.blue,
                   onTap: () {
                     debugPrint('Map tapped.');
-                    Get.to(const Provide());
+                    
                   },
                   child: Container(
                     color: Colors.black54,

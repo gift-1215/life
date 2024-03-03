@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:life/landing_page.dart';
+import 'package:flutter/widgets.dart';
 import 'firebase_options.dart';
-import 'package:sign_in_button/sign_in_button.dart';
 import 'components/text_field.dart';
 import 'components/my_button.dart';
-import 'landing_page.dart';
 import 'package:get/get.dart';
 
-var sign_in_var = 0;
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -24,21 +21,32 @@ class _SignInPageState extends State<SignInPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn() async{
-    sign_in_var = 0;
-    try{
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text, 
-      password: passwordController.text,
-      );} on FirebaseAuthException catch (e){
-        print("error");
-        sign_in_var = -1;
-      }
-    if(sign_in_var == 0)sign_in_var = 1;
+  void signUserIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      print("error");
+      showErrorMessage();
+    }
+  }
+
+  void showErrorMessage() {
+    Get.dialog( Dialog(
+      backgroundColor: Colors.black,
+      child: SizedBox(height: MediaQuery.of(context).size.width * 0.2,
+          child: const Center(
+            
+              child: Text(
+        'Invalid Email or Password',
+        style: TextStyle(fontSize: 20, color: Colors.white),
+      ))),
+    ));
   }
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[800],
