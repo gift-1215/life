@@ -1,13 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'message_page.dart';
 import 'home_page.dart';
 import 'notification_page.dart';
-import 'getx_controller.dart';
-import 'sign_page.dart';
-
-bool sign_in = false;
+import 'components/getx_controller.dart';
 
 class LandingPage extends StatelessWidget {
   final TextStyle unselectedLabelStyle = TextStyle(
@@ -20,7 +18,8 @@ class LandingPage extends StatelessWidget {
 
   buildBottomNavigationMenu(context, landingPageController) {
     return Obx(() => MediaQuery(
-        data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+        data: MediaQuery.of(context)
+            .copyWith(textScaler: const TextScaler.linear(1.0)),
         child: SizedBox(
           height: 100,
           child: BottomNavigationBar(
@@ -72,6 +71,10 @@ class LandingPage extends StatelessWidget {
         )));
   }
 
+  void signUserOut(){
+    FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     final LandingPageController landingPageController =
@@ -80,19 +83,23 @@ class LandingPage extends StatelessWidget {
         child: Scaffold(
       bottomNavigationBar:
           buildBottomNavigationMenu(context, landingPageController),
-appBar: AppBar(
+      appBar: AppBar(
         title: const Text(
           'airyzone Life',
           style: TextStyle(color: Colors.white),
         ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Color.fromARGB(255, 32, 13, 58),
-      ),      body: Obx(() => IndexedStack(
+        //iconTheme: const IconThemeData(color: Colors.white),
+        actions: [
+          IconButton(onPressed: signUserOut, icon: Icon(Icons.logout,color: Colors.white,)),
+        ],
+        backgroundColor: const Color.fromARGB(255, 32, 13, 58),
+      ),
+      body: Obx(() => IndexedStack(
             index: landingPageController.tabIndex.value,
             children: [
-              const HomePage(),
-              const MessagePage(),
-              const NotificationPage(),
+              HomePage(),
+              MessagePage(),
+              NotificationPage(),
             ],
           )),
     ));

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -6,7 +7,9 @@ import 'request.dart';
 import 'provide.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  final user = FirebaseAuth.instance.currentUser!;
 
   @override
   Widget build(BuildContext context) {
@@ -31,20 +34,22 @@ class HomePage extends StatelessWidget {
                   },
                   child: Expanded(
                     child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
                       width: MediaQuery.of(context).size.width,
-                      child:  Row(
+                      child: Row(
                         children: [
                           Expanded(
                             flex: 1,
                             child: Card(
                               margin: EdgeInsets.all(10),
-                              child: Image.asset('assets/blank-profile-picture-973460_960_720.webp',
+                              child: Image.asset(
+                                'assets/blank-profile-picture-973460_960_720.webp',
                                 height: 120,
                                 width: 250,
                               ),
                             ),
                           ),
-                          Expanded(flex: 2, child: Text('個人檔案')),
+                          Expanded(flex: 2, child: Text('個人檔案' + user.email!)),
                         ],
                       ),
                     ),
@@ -52,7 +57,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 50),
+            
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +78,7 @@ class HomePage extends StatelessWidget {
                         },
                         child: Container(
                           color: Colors.black54,
-                          height: 200,
+                          height: MediaQuery.of(context).size.height * 0.2,
                           child: const Text(
                             '供給',
                             style: TextStyle(color: Colors.white, fontSize: 30),
@@ -100,7 +105,7 @@ class HomePage extends StatelessWidget {
                         },
                         child: Container(
                           color: Colors.black54,
-                          height: 200,
+                          height: MediaQuery.of(context).size.height * 0.2,
                           child: const Text(
                             '需求',
                             style: TextStyle(color: Colors.white, fontSize: 30),
@@ -113,7 +118,36 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 50),
+            
+            Expanded(
+              child: Card(
+                margin: const EdgeInsets.all(10.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                clipBehavior: Clip.hardEdge,
+                child: InkWell(
+                  splashColor: Colors.blue,
+                  onTap: () {
+                    debugPrint('Map tapped.');
+                    Get.to(const Provide());
+                  },
+                  child: Container(
+                    color: Colors.black54,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width ,
+                    child: const Text(
+                      '地圖',
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
           ],
         ),
       ),
