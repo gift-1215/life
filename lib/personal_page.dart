@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'dart:typed_data';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:life/components/my_card_button.dart';
@@ -15,7 +16,7 @@ class PersonalPage extends StatefulWidget {
 
 class _PersonalPageState extends State<PersonalPage> {
   final backGroundColor = const Color.fromARGB(255, 1, 1, 1);
-
+  final user = FirebaseAuth.instance.currentUser!;
 
 
   Uint8List? _image;
@@ -27,7 +28,7 @@ class _PersonalPageState extends State<PersonalPage> {
   }
 
   Future upLoadProfileImage() async{
-    //final path = 'profile_image/${_image.}'
+    //final path = 'profile_image/${user.email}/${_image.toString()}';
   }
 
   @override

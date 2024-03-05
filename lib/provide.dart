@@ -13,7 +13,7 @@ class Provide extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.green,
+        backgroundColor: Color.fromARGB(255, 70, 35, 227),
       ),
       body: Container(
         color: Colors.black87,

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:life/map/flutter_map_page.dart';
 import 'request.dart';
 import 'provide.dart';
 import 'personal_page.dart';
@@ -132,7 +133,7 @@ class HomePage extends StatelessWidget {
                   splashColor: Colors.blue,
                   onTap: () {
                     debugPrint('Map tapped.');
-                    
+                    Get.to(FlutterMapPage());
                   },
                   child: Container(
                     color: Colors.black54,
