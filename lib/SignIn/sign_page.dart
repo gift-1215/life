@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
+import 'package:life/SignIn/landing_page.dart';
 import '../firebase_options.dart';
 import '../components/text_field.dart';
 import '../components/my_button.dart';
@@ -27,6 +29,7 @@ class _SignInPageState extends State<SignInPage> {
         email: emailController.text,
         password: passwordController.text,
       );
+      Get.off(LandingPage());
     } on FirebaseAuthException catch (e) {
       print("error");
       showErrorMessage();
@@ -87,24 +90,74 @@ class _SignInPageState extends State<SignInPage> {
                 SizedBox(
                   height: MediaQuery.of(context).size.width * 0.05,
                 ),
-                MyButton(onTap: signUserIn,text: '登入',),
+                MyButton(
+                  onTap: signUserIn,
+                  text: '登入',
+                ),
                 SizedBox(
                   height: MediaQuery.of(context).size.width * 0.05,
                 ),
                 TextButton(
-                    onPressed: (){
-                      Get.off(RegisterPage());
+                    onPressed: () {
+                      Get.off(const RegisterPage());
                     },
                     style: ButtonStyle(
                       overlayColor:
                           MaterialStateProperty.all(Colors.transparent),
                     ),
-                    child: Text(
+                    child: const Text(
                       '沒有帳號？ 註冊',
                       style: TextStyle(
                           fontSize: 20,
                           color: Color.fromARGB(255, 225, 221, 240)),
                     )),
+                SizedBox(
+                  height: MediaQuery.of(context).size.width * 0.1,
+                ),
+                const Row(
+                  children: [
+                    Expanded(
+                        child: Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                    )),
+                    Text(
+                      ' 以其他方式登入 ',
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Expanded(
+                        child: Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                    )),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.width * 0.1,
+                ),
+                Row(
+                  children: [
+                    const Expanded(
+                        child: IconButton(
+                      icon: Icon(
+                        Icons.apple_rounded,
+                        size: 100,
+                        color: Colors.white,
+                      ),
+                      onPressed: null,
+                    )),
+                    Expanded(
+                        child: GestureDetector(
+                      onTap: null,
+                      child: Image.asset(
+                        'assets/google.png',
+                        height: 80,
+                      ),
+                    )),
+                  ],
+                )
               ],
             ),
           ),

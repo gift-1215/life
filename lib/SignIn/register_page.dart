@@ -28,7 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
       if (passwordController.text == confirmpasswordController.text) {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
             email: emailController.text, password: passwordController.text);
-            Get.off(LandingPage());
+        Get.off(LandingPage());
       } else {
         showErrorMessage('密碼與再次確認的不符');
       }
@@ -60,7 +60,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.width * 0.2,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 const Icon(
                   Icons.lock,
@@ -116,6 +116,53 @@ class _RegisterPageState extends State<RegisterPage> {
                           fontSize: 20,
                           color: Color.fromARGB(255, 225, 221, 240)),
                     )),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                const Row(
+                  children: [
+                    Expanded(
+                        child: Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                    )),
+                    Text(
+                      ' 以其他方式註冊 ',
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Expanded(
+                        child: Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                    )),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                Row(
+                  children: [
+                    const Expanded(
+                        child: IconButton(
+                      icon: Icon(
+                        Icons.apple_rounded,
+                        size: 100,
+                        color: Colors.white,
+                      ),
+                      onPressed: null,
+                    )),
+                    Expanded(
+                        child: GestureDetector(
+                      onTap: null,
+                      child: Image.asset(
+                        'assets/google.png',
+                        height: 80,
+                      ),
+                    )),
+                  ],
+                )
               ],
             ),
           ),
