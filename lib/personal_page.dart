@@ -3,9 +3,11 @@ import 'dart:typed_data';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:life/components/my_card_button.dart';
-import 'package:life/components/utilis.dart';
+import 'package:life/resources/utilis.dart';
+import 'package:life/set_profile_page.dart';
 
 class PersonalPage extends StatefulWidget {
   PersonalPage({super.key});
@@ -98,6 +100,7 @@ class _PersonalPageState extends State<PersonalPage> {
                         splashColor: Colors.blue,
                         onTap: () {
                           debugPrint('Card tapped.');
+                          Get.to(SetProfilePage());
                         },
                         child: Container(
                           color: Colors.black54,
@@ -106,7 +109,7 @@ class _PersonalPageState extends State<PersonalPage> {
                           child: const Center(
                             child: Text(
                               '自述履歷',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white,fontSize: 20),
                               textAlign: TextAlign.center,
                             ),
                           ),
