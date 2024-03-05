@@ -1,8 +1,34 @@
-import 'package:flutter/material.dart';
-import 'package:life/components/my_card_button.dart';
+import 'dart:ffi';
+import 'dart:typed_data';
 
-class PersonalPage extends StatelessWidget {
-  const PersonalPage({super.key});
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:life/components/my_card_button.dart';
+import 'package:life/components/utilis.dart';
+
+class PersonalPage extends StatefulWidget {
+  PersonalPage({super.key});
+
+  @override
+  State<PersonalPage> createState() => _PersonalPageState();
+}
+
+class _PersonalPageState extends State<PersonalPage> {
+  final backGroundColor = const Color.fromARGB(255, 1, 1, 1);
+
+
+
+  Uint8List? _image;
+  void selectImage() async{
+    Uint8List img = await pickImage(ImageSource.gallery);
+    setState((){
+      _image = img;
+    });
+  }
+
+  Future upLoadProfileImage() async{
+    //final path = 'profile_image/${_image.}'
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,32 +39,44 @@ class PersonalPage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromARGB(255, 45, 25, 134),
       ),
       body: Container(
-        color: Colors.black87,
+        color: backGroundColor,
         child: Column(
           children: [
             Expanded(
               child: Column(
                 children: [
-                  SizedBox(
-                      height: 150,
-                      width: 150,
-                      child: Card(
-                        margin: const EdgeInsets.all(10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+                  Card(
+                    margin: const EdgeInsets.all(20),
+                    color: backGroundColor,
+                    child: Stack(
+                      children: [
+                        _image != null ? CircleAvatar(
+                          radius: MediaQuery.of(context).size.width * 0.18,
+                          backgroundImage: MemoryImage(_image!),
+                        ):
+                        CircleAvatar(
+                          radius: MediaQuery.of(context).size.width * 0.18,
+                          backgroundImage: const AssetImage(
+                              'assets/blank-profile-picture-973460_960_720.webp'),
                         ),
-                        child: Center(
-                          child: SizedBox(
-                            height: 120,
-                            child: Image.asset(
-                              'assets/blank-profile-picture-973460_960_720.webp',
+                        Positioned(
+                          bottom: -MediaQuery.of(context).size.width * 0.02,
+                          left: MediaQuery.of(context).size.width * 0.24,
+                          child: IconButton(
+                            onPressed: selectImage,
+                            icon: const Icon(
+                              Icons.add_a_photo,
+                              size: 30,
+                              color: Color.fromARGB(255, 84, 191, 240),
                             ),
                           ),
                         ),
-                      )),
+                      ],
+                    ),
+                  ),
                   const Text(
                     "王小明",
                     style: TextStyle(fontSize: 40, color: Colors.white),
