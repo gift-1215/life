@@ -18,6 +18,15 @@ class SetProfilePage extends StatefulWidget {
 class _SetProfilePageState extends State<SetProfilePage> {
   final backGroundColor = const Color.fromARGB(255, 1, 1, 1);
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController cityController = TextEditingController();
+  final TextEditingController relationshipController = TextEditingController();
+  final TextEditingController homeCityController = TextEditingController();
+  final TextEditingController religionController = TextEditingController();
+  final TextEditingController habitController = TextEditingController();
+  final TextEditingController selfIntroController = TextEditingController();
+  final TextEditingController workExpController = TextEditingController();
+
+
 
   Uint8List? _image;
   void selectImage() async {
@@ -29,7 +38,8 @@ class _SetProfilePageState extends State<SetProfilePage> {
 
   void saveProfile() async {
     debugPrint('called ${nameController.text}');
-    String resp = await StoreData().saveData(name: nameController.text, file: _image!);
+    String resp =
+        await StoreData().saveData(name: nameController.text, file: _image!);
     debugPrint(resp);
   }
 
@@ -86,6 +96,34 @@ class _SetProfilePageState extends State<SetProfilePage> {
                 BioEditTextField(
                     controller: nameController,
                     hintText: 'Name',
+                    obscureText: false),
+                BioEditTextField(
+                    controller: cityController,
+                    hintText: '居住城市',
+                    obscureText: false),
+                BioEditTextField(
+                    controller: relationshipController,
+                    hintText: '感情狀況',
+                    obscureText: false),
+                BioEditTextField(
+                    controller: homeCityController,
+                    hintText: '家鄉',
+                    obscureText: false),
+                BioEditTextField(
+                    controller: religionController,
+                    hintText: '信仰',
+                    obscureText: false),
+                BioEditTextField(
+                    controller: habitController,
+                    hintText: '興趣',
+                    obscureText: false),
+                BioEditTextField(
+                    controller: selfIntroController,
+                    hintText: '自訂簡介',
+                    obscureText: false),
+                BioEditTextField(
+                    controller: workExpController,
+                    hintText: '工作經歷',
                     obscureText: false),
                 ElevatedButton(
                     onPressed: () {

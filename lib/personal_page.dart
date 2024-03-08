@@ -1,7 +1,7 @@
-import 'dart:ffi';
 import 'dart:typed_data';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -20,17 +20,21 @@ class _PersonalPageState extends State<PersonalPage> {
   final backGroundColor = const Color.fromARGB(255, 1, 1, 1);
   final user = FirebaseAuth.instance.currentUser!;
 
+  late String imageUrl;
+  final storage = FirebaseStorage.instance;
 
-  Uint8List? _image;
-  void selectImage() async{
-    Uint8List img = await pickImage(ImageSource.gallery);
-    setState((){
-      _image = img;
-    });
+  void initState(){
+    super.initState();
+    imageUrl = '';
+    getImageUrl();
   }
 
-  Future upLoadProfileImage() async{
-    //final path = 'profile_image/${user.email}/${_image.toString()}';
+  Future<void> getImageUrl() async{
+    final ref = storage.ref().child('profile_image/${user.email}/image');
+    final url = await ref.getDownloadURL();
+    setState(() {
+      imageUrl = url;
+    });
   }
 
   @override
@@ -56,27 +60,10 @@ class _PersonalPageState extends State<PersonalPage> {
                     color: backGroundColor,
                     child: Stack(
                       children: [
-                        _image != null ? CircleAvatar(
-                          radius: MediaQuery.of(context).size.width * 0.18,
-                          backgroundImage: MemoryImage(_image!),
-                        ):
+                       
                         CircleAvatar(
                           radius: MediaQuery.of(context).size.width * 0.18,
-                          backgroundImage: const AssetImage(
-                              'assets/blank-profile-picture-973460_960_720.webp'),
-                        ),
-                        Positioned(
-                          bottom: -MediaQuery.of(context).size.width * 0.02,
-                          left: MediaQuery.of(context).size.width * 0.24,
-                          child: IconButton(
-                            onPressed: selectImage,
-                            icon: const Icon(
-                              Icons.add_a_photo,
-                              size: 30,
-                              color: Color.fromARGB(255, 84, 191, 240),
-                            ),
-                          ),
-                        ),
+                          backgroundImage: NetworkImage(imageUrl) != null ?  NetworkImage(imageUrl) : NetworkImage('https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Fmozilla%2Fhotdish%2Fissues%2F264&psig=AOvVaw3r1cGdpUsCIBn1xii9Kx8z&ust=1709925488786000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMCjyfzu4oQDFQAAAAAdAAAAABAF'),),
                       ],
                     ),
                   ),

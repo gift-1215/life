@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
-import '../firebase_options.dart';
+import '../resources/firebase_options.dart';
 import '../components/text_field.dart';
 import '../components/my_button.dart';
 import 'package:get/get.dart';

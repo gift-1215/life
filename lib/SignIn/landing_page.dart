@@ -1,11 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:life/components/my_drawer.dart';
+import 'package:life/my_point_page.dart';
 
 import '../message_page.dart';
 import '../home_page.dart';
 import '../notification_page.dart';
 import '../components/getx_controller.dart';
+import 'package:life/components/my_drawer_buttons.dart';
 
 class LandingPage extends StatelessWidget {
   final TextStyle unselectedLabelStyle = TextStyle(
@@ -16,7 +19,9 @@ class LandingPage extends StatelessWidget {
   final TextStyle selectedLabelStyle = const TextStyle(
       color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
 
-  buildBottomNavigationMenu(context, landingPageController) {
+  LandingPage({super.key});
+
+  /*buildBottomNavigationMenu(context, landingPageController) {
     return Obx(() => MediaQuery(
         data: MediaQuery.of(context)
             .copyWith(textScaler: const TextScaler.linear(1.0)),
@@ -59,7 +64,7 @@ class LandingPage extends StatelessWidget {
                 icon: Container(
                   margin: const EdgeInsets.only(bottom: 8),
                   child: const Icon(
-                    Icons.notifications_on,
+                    Icons.draw,
                     size: 25.0,
                   ),
                 ),
@@ -69,9 +74,9 @@ class LandingPage extends StatelessWidget {
             ],
           ),
         )));
-  }
+  }*/
 
-  void signUserOut(){
+  void signUserOut() {
     FirebaseAuth.instance.signOut();
   }
 
@@ -81,26 +86,22 @@ class LandingPage extends StatelessWidget {
         Get.put(LandingPageController(), permanent: false);
     return SafeArea(
         child: Scaffold(
-      bottomNavigationBar:
+            drawer: const Drawer(
+              child: MyDrawer(),
+            ),
+            /*bottomNavigationBar:
           buildBottomNavigationMenu(context, landingPageController),
-      appBar: AppBar(
-        title: const Text(
-          'airyzone Life',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: [
-          IconButton(onPressed: signUserOut, icon: Icon(Icons.logout,color: Colors.white,)),
-        ],
-        backgroundColor: const Color.fromARGB(255, 32, 13, 58),
-      ),
-      body: Obx(() => IndexedStack(
+      */
+
+            body: HomePage()
+            /*Obx(() => IndexedStack(
             index: landingPageController.tabIndex.value,
             children: [
               HomePage(),
               MessagePage(),
               NotificationPage(),
             ],
-          )),
-    ));
+          )),*/
+            ));
   }
 }
