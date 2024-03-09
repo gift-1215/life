@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:life/SignIn/auth_page.dart';
 import 'package:life/map/flutter_map_page.dart';
 import 'request.dart';
 import 'provide.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser!;
   void signUserOut() {
     FirebaseAuth.instance.signOut();
+    Get.off(AuthPage());
   }
 
   @override

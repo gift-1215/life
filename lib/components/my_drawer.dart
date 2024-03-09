@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:life/SignIn/landing_page.dart';
+import 'package:life/airywalker_page.dart';
+import 'package:life/map/flutter_map_page.dart';
+import 'package:life/my_collection_page.dart';
 import 'package:life/my_point_page.dart';
+import 'package:life/sign_out_page.dart';
 import 'my_drawer_buttons.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -11,7 +15,7 @@ class MyDrawer extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.zero,
       children: [
-        SizedBox(
+        const SizedBox(
           height: 50,
           child: Center(
               child: Text(
@@ -26,60 +30,48 @@ class MyDrawer extends StatelessWidget {
           text: '首頁',
           icon: Icons.home,
         ),
-        /*
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: '現在',
-                    icon: Icons.home,
-                  ),
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: '生活軌跡',
-                    icon: Icons.home,
-                  ),
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: '我的最愛',
-                    icon: Icons.home,
-                  ),
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: '收集冊',
-                    icon: Icons.home,
-                  ),
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: 'AiryWalker',
-                    icon: Icons.home,
-                  ),
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: 'LBS服務',
-                    icon: Icons.home,
-                  ),
-                  MyDrawerCardButton(
-                    page: MyPointPage,
-                    text: '我的推薦碼',
-                    icon: Icons.power_input_outlined,
-                  ),*/
+        const MyDrawerCardButton(
+          page: MyCollectionPage(),
+          route: false,
+          text: '收集冊',
+          icon: Icons.collections_bookmark,
+        ),
+        const MyDrawerCardButton(
+          page: AirywalkerPage(),
+          route: false,
+          text: 'AiryWalker',
+          icon: Icons.directions_walk,
+        ),
+        MyDrawerCardButton(
+          page: FlutterMapPage(),
+          route: false,
+          text: 'LBS 服務',
+          icon: Icons.map_rounded,
+        ),
+        const MyDrawerCardButton(
+          page: MyPointPage(),
+          text: '我的推薦碼',
+          route: false,
+          icon: Icons.qr_code,
+        ),
         const MyDrawerCardButton(
           page: MyPointPage(),
           text: '我的點數',
-          route: true,
+          route: false,
           icon: Icons.money,
         ),
-        /*
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: '商城',
-                    icon: Icons.home,
-                  ),
-                  MyDrawerCardButton(
-                    onTap: null,
-                    text: '登出',
-                    icon: Icons.logout,
-                  ),
-                  */
+        const MyDrawerCardButton(
+          page: MyPointPage(),
+          text: '商城',
+          route: false,
+          icon: Icons.store,
+        ),
+         MyDrawerCardButton(
+          page: SignOutPage(),
+          text: '登出',
+          route: false,
+          icon: Icons.money,
+        ),
         const MyDrawerCardButton(
           page: MyPointPage(),
           text: '設定',

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:life/components/my_drawer.dart';
 
-class MyPointPage extends StatelessWidget {
-  const MyPointPage({super.key});
+class AirywalkerPage extends StatelessWidget {
+  const AirywalkerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class MyPointPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            '我的點數',
+            'AiryWalker',
             style: TextStyle(color: Colors.white),
           ),
           iconTheme: const IconThemeData(color: Colors.white),

@@ -3,6 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:life/components/my_drawer.dart';
 
 class FlutterMapPage extends StatefulWidget {
   FlutterMapPage({super.key});
@@ -32,31 +33,36 @@ class _FlutterMapPageState extends State<FlutterMapPage> {
       return await Geolocator.getCurrentPosition();
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          '地圖',
-          style: TextStyle(color: Colors.white),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            '地圖',
+            style: TextStyle(color: Colors.white),
+          ),
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Colors.green,
         ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.green,
-      ),
-      body: Stack(
-        children: [
-          FlutterMap(
-              //set location
-              options: const MapOptions(
-                //center: LatLng(22.988, 120.217),
-                zoom: 5.0,
-              ),
-              children: [
-                TileLayer(
-                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  userAgentPackageName: 'com.testing.life',
+        drawer: const Drawer(
+          child: MyDrawer(),
+        ),
+        body: Stack(
+          children: [
+            FlutterMap(
+                //set location
+                options: const MapOptions(
+                  //center: LatLng(22.988, 120.217),
+                  zoom: 5.0,
                 ),
-                CurrentLocationLayer(),
-              ]),
-        ],
+                children: [
+                  TileLayer(
+                    urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    userAgentPackageName: 'com.testing.life',
+                  ),
+                  CurrentLocationLayer(),
+                ]),
+          ],
+        ),
       ),
     );
   }
