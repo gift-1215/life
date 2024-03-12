@@ -1,10 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/widgets.dart';
 import 'package:life/SignIn/landing_page.dart';
-import '../resources/firebase_options.dart';
 import '../components/text_field.dart';
 import '../components/my_button.dart';
 import 'package:get/get.dart';
@@ -17,9 +13,6 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  User? _user;
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -31,7 +24,7 @@ class _SignInPageState extends State<SignInPage> {
       );
       Get.off(LandingPage());
     } on FirebaseAuthException catch (e) {
-      print("error");
+      debugPrint("error");
       showErrorMessage();
     }
   }

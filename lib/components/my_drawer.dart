@@ -6,6 +6,7 @@ import 'package:life/map/flutter_map_page.dart';
 import 'package:life/my_collection_page.dart';
 import 'package:life/my_point_page.dart';
 import 'package:life/sign_out_page.dart';
+import 'package:life/store_page.dart';
 import 'my_drawer_buttons.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -60,8 +61,8 @@ class MyDrawer extends StatelessWidget {
           route: false,
           icon: Icons.money,
         ),
-        const MyDrawerCardButton(
-          page: MyPointPage(),
+         MyDrawerCardButton(
+          page: StorePage(),
           text: '商城',
           route: false,
           icon: Icons.store,

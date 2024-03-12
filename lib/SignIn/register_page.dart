@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/widgets.dart';
-import '../resources/firebase_options.dart';
 import '../components/text_field.dart';
 import '../components/my_button.dart';
 import 'package:get/get.dart';
@@ -16,9 +13,6 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  User? _user;
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmpasswordController = TextEditingController();
@@ -45,7 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Center(
               child: Text(
             text,
-            style: TextStyle(fontSize: 20, color: Colors.white),
+            style: const TextStyle(fontSize: 20, color: Colors.white),
           ))),
     ));
   }
@@ -104,7 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 TextButton(
                     onPressed: () {
-                      Get.off(SignInPage());
+                      Get.off(const SignInPage());
                     },
                     style: ButtonStyle(
                       overlayColor:

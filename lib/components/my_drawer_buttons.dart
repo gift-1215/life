@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:life/my_point_page.dart';
 
 class MyDrawerCardButton extends StatelessWidget {
   //final Function()? onTap;

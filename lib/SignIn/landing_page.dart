@@ -2,13 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:life/components/my_drawer.dart';
-import 'package:life/my_point_page.dart';
 
-import '../message_page.dart';
 import '../home_page.dart';
-import '../notification_page.dart';
 import '../components/getx_controller.dart';
-import 'package:life/components/my_drawer_buttons.dart';
 
 class LandingPage extends StatelessWidget {
   final TextStyle unselectedLabelStyle = TextStyle(
@@ -82,8 +78,7 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final LandingPageController landingPageController =
-        Get.put(LandingPageController(), permanent: false);
+    Get.put(LandingPageController(), permanent: false);
     return SafeArea(
         child: Scaffold(
             drawer: const Drawer(

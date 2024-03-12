@@ -18,7 +18,7 @@ class BioEditTextField extends StatelessWidget {
       Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: EdgeInsets.only(left: 10.0),
+          padding: const EdgeInsets.only(left: 10.0),
           child: Text(
             hintText,
             style: const TextStyle(
@@ -47,7 +47,7 @@ class BioEditTextField extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          style:TextStyle(color: Colors.white,fontSize: 25),
+          style:const TextStyle(color: Colors.white,fontSize: 25),
         ),
       ),
       SizedBox(

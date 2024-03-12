@@ -1,10 +1,8 @@
 import 'dart:typed_data';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:life/components/bio_edit_textfield.dart';
-import 'package:life/components/my_card_button.dart';
 import 'package:life/resources/add_data.dart';
 import 'package:life/resources/utilis.dart';
 

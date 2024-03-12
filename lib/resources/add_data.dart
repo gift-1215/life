@@ -2,15 +2,12 @@ import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 final FirebaseStorage _storage = FirebaseStorage.instance;
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final user = FirebaseAuth.instance.currentUser!;
-
 
 class StoreData {
   Future<String> uploadImageToStorage(String childName, Uint8List file) async {
@@ -25,13 +22,13 @@ class StoreData {
       {required String name, required Uint8List file}) async {
     String resp = "some error occurred";
     try {
-      //if (name.isNotEmpty || file.isNotEmpty) {
-        String imageUrl = await uploadImageToStorage('profile_image/${user.email}/image', file);
-        await _firestore.collection('userProfile').add({
-          'name': name,
-          'imageLink': imageUrl,
-        });
-        resp = 'success';
+      String imageUrl =
+          await uploadImageToStorage('profile_image/${user.email}/image', file);
+      await _firestore.collection('${user.email}').add({
+        'name': name,
+        'imageLink': imageUrl,
+      });
+      resp = 'cloud firestore success';
       //}
     } catch (err) {
       resp = err.toString();
