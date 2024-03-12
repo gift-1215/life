@@ -17,61 +17,6 @@ class LandingPage extends StatelessWidget {
 
   LandingPage({super.key});
 
-  /*buildBottomNavigationMenu(context, landingPageController) {
-    return Obx(() => MediaQuery(
-        data: MediaQuery.of(context)
-            .copyWith(textScaler: const TextScaler.linear(1.0)),
-        child: SizedBox(
-          height: 100,
-          child: BottomNavigationBar(
-            showUnselectedLabels: true,
-            showSelectedLabels: true,
-            onTap: landingPageController.changeTabIndex,
-            currentIndex: landingPageController.tabIndex.value,
-            backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
-            unselectedItemColor: Colors.white.withOpacity(0.5),
-            selectedItemColor: Colors.white,
-            unselectedLabelStyle: unselectedLabelStyle,
-            selectedLabelStyle: selectedLabelStyle,
-            items: [
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  child: const Icon(
-                    Icons.home,
-                    size: 25.0,
-                  ),
-                ),
-                label: 'Home',
-                backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  child: const Icon(
-                    Icons.message,
-                    size: 25.0,
-                  ),
-                ),
-                label: 'Message',
-                backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  child: const Icon(
-                    Icons.draw,
-                    size: 25.0,
-                  ),
-                ),
-                label: 'Notification',
-                backgroundColor: const Color.fromRGBO(36, 54, 101, 1.0),
-              ),
-            ],
-          ),
-        )));
-  }*/
-
   void signUserOut() {
     FirebaseAuth.instance.signOut();
   }
@@ -84,19 +29,6 @@ class LandingPage extends StatelessWidget {
             drawer: const Drawer(
               child: MyDrawer(),
             ),
-            /*bottomNavigationBar:
-          buildBottomNavigationMenu(context, landingPageController),
-      */
-
-            body: HomePage()
-            /*Obx(() => IndexedStack(
-            index: landingPageController.tabIndex.value,
-            children: [
-              HomePage(),
-              MessagePage(),
-              NotificationPage(),
-            ],
-          )),*/
-            ));
+            body: HomePage()));
   }
 }

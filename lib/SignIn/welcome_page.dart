@@ -14,25 +14,25 @@ class WelcomePage extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
-            Icon(
+            const Icon(
               Icons.air,
               size: 100,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
-            Icon(Icons.curtains),
+            const Icon(Icons.curtains),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
-            Text(
+            const Text(
               "歡迎使用",
               style: TextStyle(fontSize: 50),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.01,
             ),
-            Text(
+            const Text(
               "Airyzone Life",
               style: TextStyle(fontSize: 40),
             ),
@@ -41,9 +41,9 @@ class WelcomePage extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  Get.off(AuthPage());
+                  Get.off(const AuthPage());
                 },
-                child: Text("確認",style: TextStyle(fontSize: 20),)),
+                child: const Text("確認",style: TextStyle(fontSize: 20),)),
           ],
         ),
       ),

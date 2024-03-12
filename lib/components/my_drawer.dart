@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:life/SignIn/landing_page.dart';
+import 'package:life/SignIn/auth_page.dart';
 import 'package:life/airywalker_page.dart';
 import 'package:life/map/flutter_map_page.dart';
 import 'package:life/my_collection_page.dart';
@@ -25,8 +25,8 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.black, fontWeight: FontWeight.w500, fontSize: 26),
           )),
         ),
-        MyDrawerCardButton(
-          page: LandingPage(),
+        const MyDrawerCardButton(
+          page: AuthPage(),
           route: false,
           text: '首頁',
           icon: Icons.home,

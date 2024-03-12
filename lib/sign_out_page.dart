@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:life/SignIn/auth_page.dart';
-import 'package:life/SignIn/landing_page.dart';
 import 'package:life/components/my_drawer.dart';
 
 class SignOutPage extends StatelessWidget {
@@ -11,7 +10,7 @@ class SignOutPage extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser!;
   void signUserOut() {
     FirebaseAuth.instance.signOut();
-    Get.off(AuthPage());
+    Get.off(const AuthPage());
   }
 
   @override
@@ -32,8 +31,8 @@ class SignOutPage extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                Expanded(flex: 4, child: SizedBox()),
-                Expanded(
+                const Expanded(flex: 4, child: SizedBox()),
+                const Expanded(
                     flex: 1,
                     child: Center(
                         child: Text(
@@ -45,12 +44,12 @@ class SignOutPage extends StatelessWidget {
                     child: Center(
                         child: TextButton(
                             onPressed: () {
-                              Get.off(LandingPage());
+                              Get.off(const AuthPage());
                             },
                             style: ButtonStyle(
                                 backgroundColor:
                                     MaterialStateProperty.all(Colors.lightBlue)),
-                            child: Text(
+                            child: const Text(
                               '返回',
                               style:
                                   TextStyle(fontSize: 25, color: Colors.white),
@@ -63,12 +62,12 @@ class SignOutPage extends StatelessWidget {
                             style: ButtonStyle(
                                 backgroundColor:
                                     MaterialStateProperty.all(Colors.lightGreen)),
-                            child: Text(
+                            child: const Text(
                               '登出',
                               style:
                                   TextStyle(fontSize: 25, color: Colors.white),
                             )))),
-                Expanded(flex: 4, child: SizedBox()),
+                const Expanded(flex: 4, child: SizedBox()),
               ],
             ),
           ),

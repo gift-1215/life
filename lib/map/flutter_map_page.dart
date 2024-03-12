@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:life/components/my_drawer.dart';
 
 class FlutterMapPage extends StatefulWidget {
-  FlutterMapPage({super.key});
+  const FlutterMapPage({super.key});
 
   @override
   State<FlutterMapPage> createState() => _FlutterMapPageState();
@@ -49,8 +50,8 @@ class _FlutterMapPageState extends State<FlutterMapPage> {
           children: [
             FlutterMap(
                 //set location
-                options: const MapOptions(
-                  //center: LatLng(22.988, 120.217),
+                options:  const MapOptions(
+                  center: LatLng(22.988, 120.217),
                   zoom: 5.0,
                 ),
                 children: [

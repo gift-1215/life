@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:life/SignIn/auth_page.dart';
+import 'package:life/components/square_tile.dart';
+import 'package:life/services/auth_services.dart';
 import '../components/text_field.dart';
 import '../components/my_button.dart';
 import 'package:get/get.dart';
 import 'sign_page.dart';
-import 'landing_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -22,7 +24,7 @@ class _RegisterPageState extends State<RegisterPage> {
       if (passwordController.text == confirmpasswordController.text) {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
             email: emailController.text, password: passwordController.text);
-        Get.off(LandingPage());
+        Get.off(AuthPage());
       } else {
         showErrorMessage('密碼與再次確認的不符');
       }
@@ -137,26 +139,22 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Expanded(
-                        child: IconButton(
-                      icon: Icon(
-                        Icons.apple_rounded,
-                        size: 100,
-                        color: Colors.white,
-                      ),
-                      onPressed: null,
-                    )),
-                    Expanded(
-                        child: GestureDetector(
-                      onTap: null,
-                      child: Image.asset(
-                        'assets/google.png',
-                        height: 80,
-                      ),
-                    )),
+                    SquareTile(
+                      imagePath: 'assets/google.png',
+                      onTap: () => AuthService().signWighGoogle(),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.2,
+                    ),
+                    SquareTile(
+                      imagePath: 'assets/apple.jpg',
+                      onTap: () {},
+                    ),
                   ],
                 )
+              
               ],
             ),
           ),

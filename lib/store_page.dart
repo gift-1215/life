@@ -2,10 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:life/SignIn/auth_page.dart';
-import 'package:life/SignIn/landing_page.dart';
 import 'package:life/components/my_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class StorePage extends StatelessWidget {
    StorePage({super.key});
@@ -56,7 +54,7 @@ class StorePage extends StatelessWidget {
                     child: Center(
                         child: TextButton(
                             onPressed: () {
-                              Get.off(LandingPage());
+                              Get.off(const AuthPage());
                             },
                             style: ButtonStyle(
                                 backgroundColor:

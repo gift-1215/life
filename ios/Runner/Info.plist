@@ -13,10 +13,15 @@
 			<array>
 				<!-- TODO Replace this value: -->
 				<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
-				<string>com.googleusercontent.apps.241298580805-rov62ccuftaqf8iv1b81a6jh1bi7etr6</string>
+				<string>com.googleusercontent.apps.241298580805-9ht05lbafancr10q2k7l7v5huunrkr08</string>
 			</array>
 		</dict>
 	</array>
+	<!-- End of the Google Sign-in Section -->
+	<key>GIDClientID</key>
+	<!-- TODO Replace this value: -->
+	<!-- Copied from GoogleService-Info.plist key CLIENT_ID -->
+	<string>[241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com]</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
