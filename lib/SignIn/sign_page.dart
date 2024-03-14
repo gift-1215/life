@@ -137,14 +137,14 @@ class _SignInPageState extends State<SignInPage> {
                   children: [
                     SquareTile(
                       imagePath: 'assets/google.png',
-                      onTap: () => AuthService().signWighGoogle(),
+                      onTap: () => AuthService().signWithGoogle(),
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.2,
                     ),
                     SquareTile(
                       imagePath: 'assets/apple.jpg',
-                      onTap: () {},
+                      onTap: () => AuthService().signWithApple(),
                     ),
                   ],
                 ),

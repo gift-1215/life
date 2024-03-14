@@ -143,7 +143,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     SquareTile(
                       imagePath: 'assets/google.png',
-                      onTap: () => AuthService().signWighGoogle(),
+                      onTap: () => AuthService().signWithGoogle(),
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.2,

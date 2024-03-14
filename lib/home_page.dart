@@ -80,8 +80,8 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Expanded(
-                                flex: 2, child: Text('個人檔案' + user.email!)),
+                            //if(signInMethod == 'email')Expanded(flex: 2, child: Text('個人檔案' + user.email!)),
+                            //if(signInMethod == "apple") Expanded(flex: 2, child: Text('個人檔案' + userId)),
                           ],
                         ),
                       ),

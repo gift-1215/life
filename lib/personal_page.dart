@@ -75,20 +75,32 @@ class _PersonalPageState extends State<PersonalPage> {
                           .collection('${user.email}')
                           .snapshots(),
                       builder: (_, snapshot) {
+                        if (user.displayName != '')
+                          return Center(
+                              child: Text(
+                            user.displayName!,
+                            style: TextStyle(color: Colors.white, fontSize: 60),
+                          ));
+
                         if (snapshot.hasError)
                           return Text('Error = ${snapshot.error}');
-                    
+
                         if (snapshot.hasData) {
                           final docs = snapshot.data!.docs;
                           return ListView.builder(
                             itemCount: docs.length,
                             itemBuilder: (_, i) {
                               final data = docs[i].data();
-                              return Center(child: Text(data['name'],style: TextStyle(color: Colors.white,fontSize: 60),));
+                              return Center(
+                                  child: Text(
+                                data['name'],
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 60),
+                              ));
                             },
                           );
                         }
-                    
+
                         return Center(child: CircularProgressIndicator());
                       },
                     ),

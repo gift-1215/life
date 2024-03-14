@@ -4,6 +4,10 @@ import 'package:life/components/my_drawer.dart';
 import 'package:life/home_page.dart';
 import 'sign_page.dart';
 
+//global
+String signInMethod = 'email';
+String userId = '';
+
 class AuthPage extends StatelessWidget{
   const AuthPage({super.key});
   @override
