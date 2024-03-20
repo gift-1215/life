@@ -743,8 +743,6 @@ PODS:
     - FirebaseCoreExtension (~> 10.0)
     - GTMSessionFetcher/Core (< 4.0, >= 2.1)
   - Flutter (1.0.0)
-  - flutter_beacon (0.3.0):
-    - Flutter
   - flutter_compass (0.0.1):
     - Flutter
   - geocoding_ios (1.0.5):
@@ -906,7 +904,6 @@ DEPENDENCIES:
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
   - Flutter (from `Flutter`)
-  - flutter_beacon (from `.symlinks/plugins/flutter_beacon/ios`)
   - flutter_compass (from `.symlinks/plugins/flutter_compass/ios`)
   - geocoding_ios (from `.symlinks/plugins/geocoding_ios/ios`)
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
@@ -963,8 +960,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_storage/ios"
   Flutter:
     :path: Flutter
-  flutter_beacon:
-    :path: ".symlinks/plugins/flutter_beacon/ios"
   flutter_compass:
     :path: ".symlinks/plugins/flutter_compass/ios"
   geocoding_ios:
@@ -1009,7 +1004,6 @@ SPEC CHECKSUMS:
   FirebaseSharedSwift: 48076404e6e52372290d15a07d2ed1d2f1754023
   FirebaseStorage: bc7bddc743548a89cfb896843a77cf4bdde2c231
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_beacon: 2525df9d96b904623f325968a73bac805e648119
   flutter_compass: cbbd285cea1584c7ac9c4e0c3e1f17cbea55e855
   geocoding_ios: a389ea40f6f548de6e63006a2e31bf66ff80769a
   geolocator_apple: 9157311f654584b9bb72686c55fc02a97b73f461

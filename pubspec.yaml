@@ -51,7 +51,6 @@ dependencies:
   firebase_storage: ^11.6.8
   url_launcher: ^6.2.5
   flutter_reactive_ble: ^5.3.1
-  flutter_beacon: ^0.5.1
   sign_in_with_apple: ^6.0.0
 
 dev_dependencies:

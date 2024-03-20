@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:life/SignIn/auth_page.dart';
 import 'package:life/map/flutter_map_page.dart';
+import 'components/my_drawer.dart';
 import 'request.dart';
 import 'provide.dart';
 import 'personal_page.dart';
@@ -21,18 +22,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //drawer: const Drawer(child: MyDrawer(),),
       appBar: AppBar(
         title: const Text(
           'airyzone Life',
           style: TextStyle(color: Colors.white),
         ),
+        /*
         leading: IconButton(
           icon: Icon(
             Icons.reorder,
             color: Colors.white,
           ),
           onPressed: () => Scaffold.of(context).openDrawer(),
-        ),
+        ),*/
         actions: [
           IconButton(
               onPressed: signUserOut,
@@ -43,6 +46,7 @@ class HomePage extends StatelessWidget {
         ],
         backgroundColor: const Color.fromARGB(255, 32, 13, 58),
       ),
+      
       body: Container(
         color: Colors.black,
         padding: const EdgeInsets.all(8.0),

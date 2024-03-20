@@ -19,6 +19,8 @@ class AuthService{
 
   Future<UserCredential> signWithApple() async{
     final appleProvider = AppleAuthProvider();
+    appleProvider.addScope('name');
+    appleProvider.addScope('email');
     signInMethod = "apple";
     //userId = AppleIDAuthorizationRequest().toString();
     return await FirebaseAuth.instance.signInWithProvider(appleProvider);

@@ -51,7 +51,7 @@ class MyDrawerCardButton extends StatelessWidget {
                   flex: 7,
                   child: Text(
                     text,
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: TextStyle(color: Colors.white, fontSize: 15),
                     textAlign: TextAlign.center,
                   ),
                 ),
