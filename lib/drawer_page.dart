@@ -52,8 +52,8 @@ class _DrawerPageState extends State<DrawerPage> {
                   ..setEntry(3, 2, 0.0001)
                   ..setEntry(0, 3, 200 * val)
                   ..rotateY((pi / 6) * val),
-                //child: HomePage(),
-                child: NotificationPage(),
+                child: HomePage(),
+                //child: NotificationPage(),
               ));
             }),
         GestureDetector(
