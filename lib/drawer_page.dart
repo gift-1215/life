@@ -4,7 +4,6 @@ import 'package:life/components/my_drawer.dart';
 import 'dart:math';
 
 import 'package:life/home_page.dart';
-import 'package:life/notification_page.dart';
 
 class DrawerPage extends StatefulWidget {
   @override
@@ -36,7 +35,6 @@ class _DrawerPageState extends State<DrawerPage> {
             padding: const EdgeInsets.all(8.0),
             child: const Column(
               children: [
-                
                 Expanded(child: MyDrawer()),
               ],
             ),
@@ -59,11 +57,11 @@ class _DrawerPageState extends State<DrawerPage> {
         GestureDetector(
           onHorizontalDragUpdate: (e) {
             if (e.delta.dx > 0) {
-              setState(()  {
+              setState(() {
                 value = 1;
               });
             } else {
-              setState(()  {
+              setState(() {
                 value = 0;
               });
             }

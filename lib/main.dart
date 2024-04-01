@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:get/get.dart';
 import 'package:life/resources/firebase_options.dart';
+import 'package:life/test_figma_page.dart';
 
 import 'SignIn/welcome_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  /*LineSDK.instance.setup('2004282602').then((_) {
+  LineSDK.instance.setup('2004282602').then((_) {
     debugPrint('LineSDK Prepared');
-  });*/
+  });
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(useMaterial3: true),
-      home: const WelcomePage(),
+      //home: const WelcomePage(),
+      home: Testing(),
     );
   }
 }

@@ -1,11 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:life/SignIn/auth_page.dart';
 import 'package:life/map/flutter_map_page.dart';
-import 'components/my_drawer.dart';
 import 'request.dart';
 import 'provide.dart';
 import 'personal_page.dart';
@@ -16,7 +13,7 @@ class HomePage extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser!;
   void signUserOut() {
     FirebaseAuth.instance.signOut();
-    Get.off(AuthPage());
+    Get.off(const AuthPage());
   }
 
   @override
@@ -39,14 +36,14 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: signUserOut,
-              icon: Icon(
+              icon: const Icon(
                 Icons.logout,
                 color: Colors.white,
               )),
         ],
         backgroundColor: const Color.fromARGB(255, 32, 13, 58),
       ),
-      
+
       body: Container(
         color: Colors.black,
         padding: const EdgeInsets.all(8.0),
@@ -65,7 +62,7 @@ class HomePage extends StatelessWidget {
                     splashColor: Colors.blue,
                     onTap: () {
                       debugPrint('Personal tapped.');
-                      Get.to(PersonalPage());
+                      Get.to(const PersonalPage());
                     },
                     child: Expanded(
                       child: SizedBox(
@@ -76,7 +73,7 @@ class HomePage extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Card(
-                                margin: EdgeInsets.all(10),
+                                margin: const EdgeInsets.all(10),
                                 child: Image.asset(
                                   'assets/blank-profile-picture-973460_960_720.webp',
                                   height: 120,
@@ -166,7 +163,7 @@ class HomePage extends StatelessWidget {
                     splashColor: Colors.blue,
                     onTap: () {
                       debugPrint('Map tapped.');
-                      Get.to(FlutterMapPage());
+                      Get.to(const FlutterMapPage());
                     },
                     child: Container(
                       color: Colors.black54,
