@@ -1,88 +1,34 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:life/SignIn/auth_page.dart';
-import 'package:life/components/my_drawer.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class StorePage extends StatelessWidget {
-   StorePage({super.key});
+  WebViewController controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..setBackgroundColor(const Color(0x00000000))
+    ..setNavigationDelegate(
+      NavigationDelegate(
+        onProgress: (int progress) {
+          // Update loading bar.
+        },
+        onPageStarted: (String url) {},
+        onPageFinished: (String url) {},
+        onWebResourceError: (WebResourceError error) {},
+        onNavigationRequest: (NavigationRequest request) {
+          if (request.url.startsWith('tendencyexpress.com')) {
+            return NavigationDecision.prevent;
+          }
+          return NavigationDecision.navigate;
+        },
+      ),
+    )
+    ..loadRequest(Uri.parse('https://tendencyexpress.com/shop/'));
 
-  final user = FirebaseAuth.instance.currentUser!;
-
-  static Future<void> _launchURL(String url) async {
-  
-  try {
-    await launchUrl(Uri.parse(url));
-    debugPrint("+========================================================+");
-    debugPrint('url launched successfully');
-    debugPrint("+========================================================+");
-  } catch (e) {
-    debugPrint("+========================================================+");
-    throw 'Could not launch $e';
-  }
-}
-
+  StorePage({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'AiryWalker',
-            style: TextStyle(color: Colors.white),
-          ),
-          iconTheme: const IconThemeData(color: Colors.white),
-          backgroundColor: const Color.fromARGB(255, 91, 115, 98),
-        ),
-        drawer: const Drawer(child: MyDrawer()),
-        body: Container(
-          color: Colors.black87,
-          child: Center(
-            child: Column(
-              children: [
-                const Expanded(flex: 4, child: SizedBox()),
-                const Expanded(
-                    flex: 1,
-                    child: Center(
-                        child: Text(
-                      '確定登出？',
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ))),
-                Expanded(
-                    flex: 1,
-                    child: Center(
-                        child: TextButton(
-                            onPressed: () {
-                              Get.off(const AuthPage());
-                            },
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.lightBlue)),
-                            child: const Text(
-                              '返回',
-                              style:
-                                  TextStyle(fontSize: 25, color: Colors.white),
-                            )))),
-                Expanded(
-                    flex: 1,
-                    child: Center(
-                        child: TextButton(
-                            onPressed:(){ _launchURL('https://tendencyexpress.com/'); },
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.lightGreen)),
-                            child: const Text(
-                              '網站',
-                              style:
-                                  TextStyle(fontSize: 25, color: Colors.white),
-                            )))),
-                const Expanded(flex: 4, child: SizedBox()),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
+        child: Scaffold(
+            appBar: AppBar(title: Text('商城')),
+            body: WebViewWidget(controller: controller)));
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:get/get.dart';
 import 'package:life/resources/firebase_options.dart';
+import 'package:life/store_page.dart';
 import 'package:life/test_figma_page.dart';
 
 import 'SignIn/welcome_page.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeData(useMaterial3: true),
       //home: const WelcomePage(),
-      home: Testing(),
+      home: StorePage(),
     );
   }
 }

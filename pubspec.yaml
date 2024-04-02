@@ -53,6 +53,8 @@ dependencies:
   flutter_reactive_ble: ^5.3.1
   sign_in_with_apple: ^6.0.0
   flutter_line_sdk: ^2.3.6
+  webview_flutter: ^4.7.0
+  flutter_webview_plugin: ^0.4.0
 
 dev_dependencies:
   flutter_test:
