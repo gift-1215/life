@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(useMaterial3: true),
-      //home: const WelcomePage(),
-      home: StorePage(),
+      home: const WelcomePage(),
+      //home: Testing(),
     );
   }
 }
