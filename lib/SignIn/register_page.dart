@@ -49,7 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Color.fromARGB(255, 228, 235, 245),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -58,18 +58,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                const Icon(
-                  Icons.lock,
-                  color: Colors.white,
-                  size: 100,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.width * 0.05,
-                ),
-                const Text(
-                  "Let's create an Airyzone Life account",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
+                Image.asset('assets/life.png',
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    fit: BoxFit.cover),
                 SizedBox(
                   height: MediaQuery.of(context).size.width * 0.05,
                 ),
@@ -108,9 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     child: const Text(
                       '已經有帳號？ 登入',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 225, 221, 240)),
+                      style: TextStyle(fontSize: 20, color: Colors.black),
                     )),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
@@ -152,9 +141,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       imagePath: 'assets/apple.jpg',
                       onTap: () {},
                     ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.2,
+                    ),
+                    SquareTile(
+                      imagePath: 'assets/line.png',
+                      onTap: () => AuthService().signWithLine(),
+                    ),
                   ],
                 )
-              
               ],
             ),
           ),
