@@ -12,16 +12,11 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
+              height: MediaQuery.of(context).size.height * 0.3,
             ),
-            const Icon(
-              Icons.air,
-              size: 100,
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
-            ),
-            const Icon(Icons.curtains),
+            Image.asset('assets/airyzone.png',
+                height: MediaQuery.of(context).size.height * 0.1,
+                fit: BoxFit.cover),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
@@ -43,7 +38,10 @@ class WelcomePage extends StatelessWidget {
                 onPressed: () {
                   Get.off(const AuthPage());
                 },
-                child: const Text("確認",style: TextStyle(fontSize: 20),)),
+                child: const Text(
+                  "確認",
+                  style: TextStyle(fontSize: 20),
+                )),
           ],
         ),
       ),

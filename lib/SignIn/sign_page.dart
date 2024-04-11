@@ -47,27 +47,18 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Color.fromARGB(255, 216, 229, 246),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.width * 0.2,
+                  height: MediaQuery.of(context).size.width * 0.08,
                 ),
-                const Icon(
-                  Icons.lock,
-                  color: Colors.white,
-                  size: 100,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.width * 0.05,
-                ),
-                const Text(
-                  "Welcome back to Airyzone Life",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
+                Image.asset('assets/life.png',
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    fit: BoxFit.cover),
                 SizedBox(
                   height: MediaQuery.of(context).size.width * 0.05,
                 ),
@@ -96,18 +87,13 @@ class _SignInPageState extends State<SignInPage> {
                     onPressed: () {
                       Get.off(const RegisterPage());
                     },
-                    style: ButtonStyle(
-                      overlayColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                    ),
                     child: const Text(
                       '沒有帳號？ 註冊',
                       style: TextStyle(
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 225, 221, 240)),
+                          fontSize: 20, color: Color.fromARGB(255, 7, 1, 11)),
                     )),
                 SizedBox(
-                  height: MediaQuery.of(context).size.width * 0.1,
+                  height: MediaQuery.of(context).size.width * 0.01,
                 ),
                 const Row(
                   children: [
