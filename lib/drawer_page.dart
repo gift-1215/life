@@ -6,6 +6,8 @@ import 'dart:math';
 import 'package:life/home_page.dart';
 
 class DrawerPage extends StatefulWidget {
+  const DrawerPage({super.key});
+
   @override
   State<DrawerPage> createState() => _DrawerPageState();
 }

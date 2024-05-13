@@ -1,9 +1,12 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:life/services/dynamic_link_services.dart';
 import "auth_page.dart";
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+  const WelcomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +39,7 @@ class WelcomePage extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
+                  createDynamicLink();
                   Get.off(const AuthPage());
                 },
                 child: const Text(
@@ -46,5 +50,9 @@ class WelcomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void createDynamicLink() async {
+    DynamicLinkServices.instance.createDynamicLink();
   }
 }

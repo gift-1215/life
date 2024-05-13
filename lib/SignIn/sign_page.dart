@@ -24,7 +24,7 @@ class _SignInPageState extends State<SignInPage> {
         email: emailController.text,
         password: passwordController.text,
       );
-      Get.off(AuthPage());
+      Get.off(const AuthPage());
     } on FirebaseAuthException catch (e) {
       debugPrint("error");
       showErrorMessage();
@@ -47,7 +47,7 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 228, 235, 245),
+      backgroundColor: const Color.fromARGB(255, 228, 235, 245),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatelessWidget {
-  const NotificationPage({Key? key}) : super(key: key);
+  const NotificationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +20,14 @@ class NotificationPage extends StatelessWidget {
               height: 40,
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(),
-              child: Column(
+              child: const Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 22,
-                    child: const Stack(children: []),
+                    child: Stack(children: []),
                   ),
                 ],
               ),
@@ -36,7 +36,7 @@ class NotificationPage extends StatelessWidget {
           Positioned(
             left: 30,
             top: 697,
-            child: Container(
+            child: SizedBox(
               width: 370,
               height: 165,
               child: Stack(
@@ -128,7 +128,7 @@ class NotificationPage extends StatelessWidget {
           Positioned(
             left: 30,
             top: 437,
-            child: Container(
+            child: SizedBox(
               width: 180,
               height: 230,
               child: Stack(
@@ -212,15 +212,15 @@ class NotificationPage extends StatelessWidget {
                       height: 90,
                       clipBehavior: Clip.antiAlias,
                       decoration: const BoxDecoration(),
-                      child: Stack(
+                      child: const Stack(
                         children: [
                           Positioned(
                             left: 18.75,
                             top: 7.50,
-                            child: Container(
+                            child: SizedBox(
                               width: 52.50,
                               height: 75,
-                              child: const Stack(children: []),
+                              child: Stack(children: []),
                             ),
                           ),
                         ],
@@ -234,7 +234,7 @@ class NotificationPage extends StatelessWidget {
           Positioned(
             left: 220,
             top: 437,
-            child: Container(
+            child: SizedBox(
               width: 180,
               height: 230,
               child: Stack(
@@ -317,15 +317,15 @@ class NotificationPage extends StatelessWidget {
                       height: 90,
                       clipBehavior: Clip.antiAlias,
                       decoration: const BoxDecoration(),
-                      child: Stack(
+                      child: const Stack(
                         children: [
                           Positioned(
                             left: 11.25,
                             top: 11.25,
-                            child: Container(
+                            child: SizedBox(
                               width: 67.50,
                               height: 67.50,
-                              child: const Stack(children: []),
+                              child: Stack(children: []),
                             ),
                           ),
                         ],
@@ -339,7 +339,7 @@ class NotificationPage extends StatelessWidget {
           Positioned(
             left: 30,
             top: 197,
-            child: Container(
+            child: SizedBox(
               width: 370,
               height: 210,
               child: Stack(
@@ -357,8 +357,8 @@ class NotificationPage extends StatelessWidget {
                               width: 0.50, color: Color(0xFFB5C5DF)),
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        shadows: [
-                          const BoxShadow(
+                        shadows: const [
+                          BoxShadow(
                             color: Color(0x19000000),
                             blurRadius: 15,
                             offset: Offset(0, 20),
@@ -386,7 +386,7 @@ class NotificationPage extends StatelessWidget {
                   Positioned(
                     left: 105,
                     top: 0,
-                    child: Container(
+                    child: SizedBox(
                       width: 160,
                       height: 160,
                       child: Stack(
@@ -479,13 +479,13 @@ class NotificationPage extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             left: 237,
             top: 100,
-            child: Container(
+            child: SizedBox(
               width: 163,
               height: 67,
-              child: const Stack(
+              child: Stack(
                 children: [
                   Positioned(
                     left: 0,

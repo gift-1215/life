@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:life/components/my_card_button.dart';
 import 'package:life/set_profile_page.dart';
@@ -75,15 +74,18 @@ class _PersonalPageState extends State<PersonalPage> {
                           .collection('${user.email}')
                           .snapshots(),
                       builder: (_, snapshot) {
-                        if (user.displayName != '')
+                        if (user.displayName != '') {
                           return Center(
                               child: Text(
                             user.displayName!,
-                            style: TextStyle(color: Colors.white, fontSize: 60),
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 60),
                           ));
+                        }
 
-                        if (snapshot.hasError)
+                        if (snapshot.hasError) {
                           return Text('Error = ${snapshot.error}');
+                        }
 
                         if (snapshot.hasData) {
                           final docs = snapshot.data!.docs;
@@ -94,14 +96,14 @@ class _PersonalPageState extends State<PersonalPage> {
                               return Center(
                                   child: Text(
                                 data['name'],
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.white, fontSize: 60),
                               ));
                             },
                           );
                         }
 
-                        return Center(child: CircularProgressIndicator());
+                        return const Center(child: CircularProgressIndicator());
                       },
                     ),
                   ),

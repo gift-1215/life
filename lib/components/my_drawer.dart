@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:life/SignIn/auth_page.dart';
 import 'package:life/airywalker_page.dart';
@@ -16,7 +15,6 @@ class MyDrawer extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.zero,
       children: [
-        
         const SizedBox(
           height: 50,
           child: Center(
@@ -44,7 +42,7 @@ class MyDrawer extends StatelessWidget {
           text: 'AiryWalker',
           icon: Icons.directions_walk,
         ),
-        MyDrawerCardButton(
+        const MyDrawerCardButton(
           page: FlutterMapPage(),
           route: false,
           text: 'LBS 服務',
@@ -62,13 +60,13 @@ class MyDrawer extends StatelessWidget {
           route: false,
           icon: Icons.money,
         ),
-         MyDrawerCardButton(
+        MyDrawerCardButton(
           page: StorePage(),
           text: '商城',
           route: false,
           icon: Icons.store,
         ),
-         MyDrawerCardButton(
+        MyDrawerCardButton(
           page: SignOutPage(),
           text: '登出',
           route: false,

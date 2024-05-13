@@ -8,7 +8,7 @@ import 'provide.dart';
 import 'personal_page.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
 
   final user = FirebaseAuth.instance.currentUser!;
   void signUserOut() {

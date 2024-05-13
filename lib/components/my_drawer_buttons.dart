@@ -1,12 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class MyDrawerCardButton extends StatelessWidget {
-  //final Function()? onTap;
   final Widget page;
   final String text;
   final IconData icon;
@@ -35,11 +30,11 @@ class MyDrawerCardButton extends StatelessWidget {
             Get.offAll(page);
           },
           child: Container(
-            color: Color.fromARGB(133, 0, 0, 9),
+            color: const Color.fromARGB(133, 0, 0, 9),
             height: MediaQuery.of(context).size.height * 0.05,
             child: Row(
               children: [
-                Expanded(flex: 1, child: SizedBox()),
+                const Expanded(flex: 1, child: SizedBox()),
                 Expanded(
                     flex: 2,
                     child: Icon(
@@ -51,11 +46,11 @@ class MyDrawerCardButton extends StatelessWidget {
                   flex: 7,
                   child: Text(
                     text,
-                    style: TextStyle(color: Colors.white, fontSize: 15),
+                    style: const TextStyle(color: Colors.white, fontSize: 15),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                Expanded(flex: 3, child: SizedBox()),
+                const Expanded(flex: 3, child: SizedBox()),
               ],
             ),
           ),

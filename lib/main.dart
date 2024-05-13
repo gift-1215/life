@@ -3,33 +3,52 @@ import 'package:flutter/material.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:get/get.dart';
 import 'package:life/resources/firebase_options.dart';
-import 'package:life/store_page.dart';
-import 'package:life/test_figma_page.dart';
-
 import 'SignIn/welcome_page.dart';
+import 'package:go_router/go_router.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  LineSDK.instance.setup('2004282602').then((_) {
-    debugPrint('LineSDK Prepared');
-  });
-
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+
+  LineSDK.instance.setup('2004282602').then((_) {
+    debugPrint('LineSDK Prepared');
+  });
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final _router = GoRouter(
+    routes: [
+      GoRoute(
+        path: "/",
+        builder: (context, state) => const WelcomePage(),
+      ),
+    ],
+  );
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    /*
+    return MaterialApp.router(
       theme: ThemeData(useMaterial3: true),
-      home: const WelcomePage(),
+      title: "Airyzone Life",
+      routeInformationParser: _router.routeInformationParser,
+      routerDelegate: _router.routerDelegate,
+      routeInformationProvider: _router.routeInformationProvider,
+      //home: const WelcomePage(),
       //home: Testing(),
+    );*/
+
+    return GetMaterialApp(
+      //home: WelcomePage(),
+      title: 'Airyzone Life',
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => const WelcomePage(),
+      },
     );
   }
 }

@@ -24,7 +24,7 @@ class _RegisterPageState extends State<RegisterPage> {
       if (passwordController.text == confirmpasswordController.text) {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
             email: emailController.text, password: passwordController.text);
-        Get.off(AuthPage());
+        Get.off(const AuthPage());
       } else {
         showErrorMessage('密碼與再次確認的不符');
       }
@@ -49,7 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 228, 235, 245),
+      backgroundColor: const Color.fromARGB(255, 228, 235, 245),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(

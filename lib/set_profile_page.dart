@@ -7,7 +7,7 @@ import 'package:life/resources/add_data.dart';
 import 'package:life/resources/utilis.dart';
 
 class SetProfilePage extends StatefulWidget {
-  SetProfilePage({super.key});
+  const SetProfilePage({super.key});
 
   @override
   State<SetProfilePage> createState() => _SetProfilePageState();
@@ -23,8 +23,6 @@ class _SetProfilePageState extends State<SetProfilePage> {
   final TextEditingController habitController = TextEditingController();
   final TextEditingController selfIntroController = TextEditingController();
   final TextEditingController workExpController = TextEditingController();
-
-
 
   Uint8List? _image;
   void selectImage() async {

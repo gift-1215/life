@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+          "client_id": "241298580805-ibcgs8cb1fprobn5jct84jdliibooqj7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -31,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com",
+              "client_id": "241298580805-3dkrrimm7gl3ibl4g9ki2i3v8q72scm1.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.airyzone.life"
+                "bundle_id": "com.testing.life.RunnerTests"
               }
             }
           ]
@@ -50,7 +50,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+          "client_id": "241298580805-ibcgs8cb1fprobn5jct84jdliibooqj7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -67,10 +67,10 @@
               "client_type": 3
             },
             {
-              "client_id": "241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com",
+              "client_id": "241298580805-3dkrrimm7gl3ibl4g9ki2i3v8q72scm1.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.airyzone.life"
+                "bundle_id": "com.testing.life.RunnerTests"
               }
             }
           ]
@@ -94,7 +94,7 @@
           }
         },
         {
-          "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+          "client_id": "241298580805-ibcgs8cb1fprobn5jct84jdliibooqj7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -111,10 +111,10 @@
               "client_type": 3
             },
             {
-              "client_id": "241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com",
+              "client_id": "241298580805-3dkrrimm7gl3ibl4g9ki2i3v8q72scm1.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.airyzone.life"
+                "bundle_id": "com.testing.life.RunnerTests"
               }
             }
           ]
@@ -130,7 +130,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "241298580805-22no17fhmjqc32gvq8tiqddialjnss0u.apps.googleusercontent.com",
+          "client_id": "241298580805-ibcgs8cb1fprobn5jct84jdliibooqj7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -147,10 +147,10 @@
               "client_type": 3
             },
             {
-              "client_id": "241298580805-9ht05lbafancr10q2k7l7v5huunrkr08.apps.googleusercontent.com",
+              "client_id": "241298580805-3dkrrimm7gl3ibl4g9ki2i3v8q72scm1.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.airyzone.life"
+                "bundle_id": "com.testing.life.RunnerTests"
               }
             }
           ]
